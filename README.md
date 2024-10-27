@@ -1,7 +1,7 @@
 # Desafíos de la materia Procesamiento del Lenguaje Natural
 ## Posgrado CEIA - UBA - Cohorte 16 2024
 
-Alumno: Gustavo Julián Rivas
+### Alumno: Gustavo Julián Rivas
 
 En este repositorio se encuentran las soluciones para los desafios de la materia Procesamiento de lenguaje natural de la Especialización en Inteligencia Artificial (CEIA) de la Facultad de Ingeniería de la Universidad de Buenos Aires (FIUBA).
 
