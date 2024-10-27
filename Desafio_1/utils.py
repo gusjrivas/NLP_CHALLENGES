@@ -38,6 +38,9 @@ def analyze_document_similarity(
         print(f"Reference Document Class: {class_labels[doc_labels[reference_idx]]}")
         print(f"{'='*50}")
 
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
+
 def find_top_similar_terms(query_term, similarity_matrix, term_list, top_n=5):
     """
     Retrieve the most similar terms to a given query term using the similarity matrix.
@@ -51,6 +54,10 @@ def find_top_similar_terms(query_term, similarity_matrix, term_list, top_n=5):
     Returns:
     - top_terms (list): A list of tuples with the most similar terms and their similarity scores.
     """
+    # Convert term_list to a list if it's a NumPy array
+    if isinstance(term_list, np.ndarray):
+        term_list = term_list.tolist()
+
     # Find the index of the query term
     try:
         term_idx = term_list.index(query_term)
@@ -66,3 +73,4 @@ def find_top_similar_terms(query_term, similarity_matrix, term_list, top_n=5):
     
     top_terms = [(term_list[i], similarities[i]) for i in top_indices]
     return top_terms
+
