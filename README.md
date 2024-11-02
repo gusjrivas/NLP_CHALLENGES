@@ -15,3 +15,8 @@ Modelos de ML: Se entrenaron modelos de Naive Bayes (Multinomial y ComplementNB)
 Vectorización de palabras: Se estudió la similaridad entre palabras, seleccionando 5 palabras y analizando las palabras más similares utilizando el mismo enfoque de vectorización.
 
 El notebook con la solución se encuentra en  https://github.com/gusjrivas/NLP_CHALLENGES/tree/main/Desafio_1
+
+### Desafio 2: Word2Vec y Análisis de Similaridad entre Palabras
+En este desafío, se trabajó con una muestra de reseñas de películas SST-2 (Stanford Sentiment Treebank 2) este es uno de los conjuntos de datos incluidos en GLUE y está diseñado específicamente para el análisis de sentimientos. SST-2 consiste en frases cortas extraídas de reseñas de películas y sus sentimientos. Se estudió la similaridad entre palabras, seleccionando 5 palabras y analizando las palabras más similares utilizando el mismo enfoque de vectorización.
+
+El notebook con la solución se encuentra en  https://github.com/gusjrivas/NLP_CHALLENGES/tree/main/Desafio_2
