@@ -1,6 +1,11 @@
 # Desafíos de la materia Procesamiento del Lenguaje Natural
 ## Posgrado CEIA - UBA - Cohorte 16 2024
 
+![Texto alternativo](logoFIUBA.jpg)
+
+
+![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.17%2B-orange.svg)](https://www.tensorflow.org/install)
 ### Alumno: Gustavo Julián Rivas - N° SIU: a1620
 
 En este repositorio se encuentran las soluciones para los desafios de la materia Procesamiento de lenguaje natural de la Especialización en Inteligencia Artificial (CEIA) de la Facultad de Ingeniería de la Universidad de Buenos Aires (FIUBA).
