@@ -4,7 +4,7 @@
 ![Texto alternativo](logoFIUBA.jpg)
 
 
-![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)]
+![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.17%2B-orange.svg)](https://www.tensorflow.org/install)
 ### Alumno: Gustavo Julián Rivas - N° SIU: a1620
 
