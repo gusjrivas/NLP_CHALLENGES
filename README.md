@@ -25,3 +25,17 @@ El notebook con la solución se encuentra en  https://github.com/gusjrivas/NLP_C
 En este desafío, se trabajó con una muestra de reseñas de películas SST-2 (Stanford Sentiment Treebank 2) este es uno de los conjuntos de datos incluidos en GLUE y está diseñado específicamente para el análisis de sentimientos. SST-2 consiste en frases cortas extraídas de reseñas de películas y sus sentimientos. Se estudió la similaridad entre palabras, seleccionando 5 palabras y analizando las palabras más similares utilizando el mismo enfoque de vectorización.
 
 El notebook con la solución se encuentra en  https://github.com/gusjrivas/NLP_CHALLENGES/tree/main/Desafio_2
+
+
+### Desafío 3: Generación de Texto con LSTM basado en el libro Martín Fierro
+En este desafío, se trabajó con una publicación de Martín Fierro para entrenar un modelo LSTM de generación de texto. Se trabajó en lo siguiente:
+
+Carga y Preparación de Datos: Se cargaron los datos del publicación-martin-fierro.pdf y se preprocesaron para segmentar el texto en palabras. Luego, se entrenó un Tokenizer para convertir las palabras en índices numéricos. Posteriormente, se dividió el conjunto de datos en entrenamiento y validación, y se aplicó padding para asegurar que todas las secuencias tuvieran la misma longitud.
+
+Entrenamiento del Modelo LSTM: Este modelo NLP utiliza una arquitectura secuencial con embeddings y LSTM para procesar texto, optimizado para tareas como generación y predicción de palabras en secuencia. Comienza con una capa de embeddings que convierte cada palabra en un vector denso de 16 dimensiones, facilitando una representación numérica del texto. A continuación, dos capas LSTM con 32 unidades cada una capturan relaciones secuenciales en el texto, permitiendo que el modelo aprenda patrones contextuales a largo plazo, mientras que una capa de dropout ayuda a reducir el sobreajuste, mejorando la capacidad de generalización del modelo.
+
+La capa final es una densa con activación softmax, que convierte las características aprendidas en una probabilidad sobre el vocabulario, permitiendo al modelo predecir la siguiente palabra. 
+
+el notebook con la solución se encuentra en  https://github.com/gusjrivas/NLP_CHALLENGES/tree/main/Desafio_3
+
+
