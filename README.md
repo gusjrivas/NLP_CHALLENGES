@@ -56,13 +56,13 @@ el notebook con la solución se encuentra en  https://github.com/gusjrivas/NLP_C
 
 En este desafío, se trabajó con un conjunto de datos de conversaciones para entrenar un bot de preguntas y respuestas (QA) utilizando una arquitectura encoder-decoder con LSTM y embeddings preentrenados de FastText. A continuación, se detallan las etapas y características principales del proyecto:
 
-## 1. Carga y Preparación de Datos
+## Carga y Preparación de Datos
 
 - Se utilizó el archivo `data_volunteers.json`, que contiene diálogos entre un bot y usuarios.
 - Las oraciones de entrada y salida fueron limpiadas y preparadas añadiendo los tokens `<sos>` y `<eos>` para marcar el comienzo y final de las oraciones.
 - Se descartaron las oraciones que superaban una longitud de 8 palabras para garantizar consistencia en las secuencias.
 
-## 2. Tokenización y Padding
+## Tokenización y Padding
 
 - Se utilizó el `Tokenizer` de Keras para convertir las oraciones en secuencias de tokens.
 - Se crearon los diccionarios `word2idx_inputs` y `word2idx_outputs`.
@@ -71,13 +71,13 @@ En este desafío, se trabajó con un conjunto de datos de conversaciones para en
   - `decoder_input_sequences`
   - `decoder_targets` (salidas categorizadas).
 
-## 3. Preparación de Embeddings
+## Preparación de Embeddings
 
 - Se utilizaron embeddings preentrenados de FastText para inicializar la capa de embeddings del modelo.
 - La clase `FasttextEmbeddings` fue implementada para manejar la matriz de embeddings.
 - Se generó una matriz de embeddings adaptada al vocabulario del conjunto de datos.
 
-## 4. Modelos Implementados
+## Modelos Implementados
 
 ### Modelo 1: LSTM Encoder-Decoder
 
@@ -96,7 +96,7 @@ En este desafío, se trabajó con un conjunto de datos de conversaciones para en
 - **Resultados**:
   - Mejor capacidad para responder preguntas complejas, retrasando el overfitting gracias a la atención.
 
-## 5. Entrenamiento
+## Entrenamiento
 
 - Ambos modelos fueron entrenados con:
   - Callbacks: `EarlyStopping`, `ModelCheckpoint` y `ReduceLROnPlateau`.
@@ -104,7 +104,7 @@ En este desafío, se trabajó con un conjunto de datos de conversaciones para en
   - Pérdida: `categorical_crossentropy`.
 - El mejor modelo fue guardado automáticamente según la métrica de validación.
 
-## 6. Inferencia y Generación de Respuestas
+## Inferencia y Generación de Respuestas
 
 - Los modelos fueron evaluados con preguntas predefinidas y aleatorias. Algunos ejemplos de respuestas incluyen:
 
@@ -122,7 +122,7 @@ En este desafío, se trabajó con un conjunto de datos de conversaciones para en
 
 Aunque el tamaño reducido del dataset limitó el desempeño, el modelo con atención logró un mejor rendimiento en general.
 
-## 7. Conclusiones
+## Conclusiones
 
 - La incorporación de atención y Bidirectional LSTM demostró ser beneficiosa para mejorar la calidad de las respuestas.
 - Se identificaron limitaciones significativas debido al dataset, lo que sugiere la necesidad de un conjunto de datos más grande para explorar modelos más complejos.
