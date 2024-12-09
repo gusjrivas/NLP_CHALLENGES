@@ -39,3 +39,83 @@ La capa final es una densa con activación softmax, que convierte las caracterí
 el notebook con la solución se encuentra en  https://github.com/gusjrivas/NLP_CHALLENGES/tree/main/Desafio_3
 
 
+# Desafío 4: LSTM Bot QA
+
+En este desafío, se trabajó con un conjunto de datos de conversaciones para entrenar un bot de preguntas y respuestas (QA) utilizando una arquitectura encoder-decoder con LSTM y embeddings preentrenados de FastText. A continuación, se detallan las etapas y características principales del proyecto:
+
+## 1. Carga y Preparación de Datos
+
+- Se utilizó el archivo `data_volunteers.json`, que contiene diálogos entre un bot y usuarios.
+- Las oraciones de entrada y salida fueron limpiadas y preparadas añadiendo los tokens `<sos>` y `<eos>` para marcar el comienzo y final de las oraciones.
+- Se descartaron las oraciones que superaban una longitud de 8 palabras para garantizar consistencia en las secuencias.
+
+## 2. Tokenización y Padding
+
+- Se utilizó el `Tokenizer` de Keras para convertir las oraciones en secuencias de tokens.
+- Se crearon los diccionarios `word2idx_inputs` y `word2idx_outputs`.
+- Las secuencias fueron ajustadas con `padding` para tener una longitud uniforme, generando:
+  - `encoder_input_sequences`
+  - `decoder_input_sequences`
+  - `decoder_targets` (salidas categorizadas).
+
+## 3. Preparación de Embeddings
+
+- Se utilizaron embeddings preentrenados de FastText para inicializar la capa de embeddings del modelo.
+- La clase `FasttextEmbeddings` fue implementada para manejar la matriz de embeddings.
+- Se generó una matriz de embeddings adaptada al vocabulario del conjunto de datos.
+
+## 4. Modelos Implementados
+
+### Modelo 1: LSTM Encoder-Decoder
+
+- **Estructura**:
+  - Encoder: Una capa LSTM con 256 unidades.
+  - Decoder: Una capa LSTM con 256 unidades conectada a una capa densa con activación `softmax`.
+- **Resultados**:
+  - Respuestas coherentes y estructuradas, aunque limitadas por el tamaño del dataset.
+
+### Modelo 2: Bidirectional LSTM con Atención
+
+- **Estructura**:
+  - Encoder: Una capa Bidirectional LSTM con 512 unidades, concatenando los estados hacia adelante y hacia atrás.
+  - Decoder: Una LSTM con 1024 unidades y un mecanismo de atención para resaltar las partes relevantes de la entrada.
+  - Regularización: Se aplicó L2 en la capa densa de salida.
+- **Resultados**:
+  - Mejor capacidad para responder preguntas complejas, retrasando el overfitting gracias a la atención.
+
+## 5. Entrenamiento
+
+- Ambos modelos fueron entrenados con:
+  - Callbacks: `EarlyStopping`, `ModelCheckpoint` y `ReduceLROnPlateau`.
+  - Optimizador: Adam con tasas de aprendizaje adaptativas.
+  - Pérdida: `categorical_crossentropy`.
+- El mejor modelo fue guardado automáticamente según la métrica de validación.
+
+## 6. Inferencia y Generación de Respuestas
+
+- Los modelos fueron evaluados con preguntas predefinidas y aleatorias. Algunos ejemplos de respuestas incluyen:
+
+### Modelo 1
+- **Pregunta**: "Where are you from?"
+  - **Respuesta**: "I am from the US"
+- **Pregunta**: "Do you read?"
+  - **Respuesta**: "I do not like to read"
+
+### Modelo 2
+- **Pregunta**: "Do you read?"
+  - **Respuesta**: "I like to read"
+- **Pregunta**: "Hello, do you play any sports?"
+  - **Respuesta**: "Yes"
+
+Aunque el tamaño reducido del dataset limitó el desempeño, el modelo con atención logró un mejor rendimiento en general.
+
+## 7. Conclusiones
+
+- La incorporación de atención y Bidirectional LSTM demostró ser beneficiosa para mejorar la calidad de las respuestas.
+- Se identificaron limitaciones significativas debido al dataset, lo que sugiere la necesidad de un conjunto de datos más grande para explorar modelos más complejos.
+
+El notebook con la solución se encuentra en:  https://github.com/gusjrivas/NLP_CHALLENGES/tree/main/Desafio_4
+
+
+
+
